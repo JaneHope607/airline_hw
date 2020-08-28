@@ -20,6 +20,6 @@ public class PassengerTest {
 
     @Test
     public void canGetBags() {
-        assertEquals(2, passenger.getBags());
+        assertEquals(2, passenger.getName());
     }
 }
