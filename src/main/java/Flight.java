@@ -9,8 +9,8 @@ public class Flight {
     private String airport;
     private String departure;
 
-    public Flight(ArrayList<Passenger> passengers, Plane plane, String flightNumber, String destination, String airport, String departure) {
-        this.passengers = passengers;
+    public Flight(Plane plane, String flightNumber, String destination, String airport, String departure) {
+        this.passengers = new ArrayList<Passenger>();
         this.plane = plane;
         this.flightNumber = flightNumber;
         this.destination = destination;
