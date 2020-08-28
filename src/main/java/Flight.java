@@ -7,15 +7,15 @@ public class Flight {
     private String flightNumber;
     private String destination;
     private String airport;
-    private String departure;
+    private String departureTime;
 
-    public Flight(Plane plane, String flightNumber, String destination, String airport, String departure) {
+    public Flight(Plane plane, String flightNumber, String destination, String airport, String departureTime) {
         this.passengers = new ArrayList<Passenger>();
         this.plane = plane;
         this.flightNumber = flightNumber;
         this.destination = destination;
         this.airport = airport;
-        this.departure = departure;
+        this.departureTime = departureTime;
     }
 
     public ArrayList<Passenger> getPassengers() {
@@ -38,8 +38,8 @@ public class Flight {
         return airport;
     }
 
-    public String getDeparture() {
-        return departure;
+    public String getDepartureTime() {
+        return departureTime;
     }
 
     public void setPlane(Plane plane) {
@@ -58,8 +58,8 @@ public class Flight {
         this.airport = airport;
     }
 
-    public void setDeparture(String departure) {
-        this.departure = departure;
+    public void setDeparture(String departureTime) {
+        this.departureTime = departureTime;
     }
 
     public int numberPassengers() {
@@ -67,8 +67,8 @@ public class Flight {
     }
 
     public int availableSeats() {
-        if (this.plane.getCapacity() >= numberPassengers()) {
-            return this.plane.getCapacity() - numberPassengers());
+        if (this.plane.getCapacity() > numberPassengers()) {
+            return this.plane.getCapacity() - numberPassengers();
         } else {
             return 0;
         }
