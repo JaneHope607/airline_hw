@@ -1,18 +1,25 @@
+import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
 public class PassengerTest {
 
-    private String name;
-    private int bags;
+    Passenger passenger;
 
-    public PassengerTest(String name, int bags) {
-        this.name = name;
-        this.bags = bags;
+    @Before
+    public void before() {
+        passenger = new Passenger("Jane O'Donnell", 2);
     }
 
-    public String getName() {
-        return name;
+    @Test
+    public void canGetName() {
+        assertEquals("Jane O'Donnell", passenger.getName());
+
     }
 
-    public int getBags() {
-        return bags;
+    @Test
+    public void canGetBags() {
+        assertEquals(2, passenger.getBags());
     }
 }
