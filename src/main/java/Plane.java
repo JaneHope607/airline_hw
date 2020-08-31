@@ -6,11 +6,19 @@ public class Plane {
         this.planeType = planeType;
     }
 
+    public PlaneType getPlaneType() {
+        return planeType;
+    }
+
     public int getCapacity() {
         return this.planeType.getCapacity();
     }
 
     public int getWeight() {
         return this.planeType.getWeight();
+    }
+
+    public int maxBaggage() {
+        return getWeight() / 2;
     }
 }
