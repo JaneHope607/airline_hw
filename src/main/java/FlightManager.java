@@ -1,8 +1,8 @@
 public class FlightManager {
 
     public int baggageWeightEachPassenger(Flight flight) {
-        Plane plane = flight.getPlane();
-        return plane.maxBaggage() / plane.getCapacity();
+        int weightBags = flight.getPlaneWeight();
+        return weightBags / flight.getCapacity();
     }
 
     public int baggageWeightTotal(Flight flight) {
@@ -11,7 +11,7 @@ public class FlightManager {
     }
 
     public int getRemainingBaggageWeight(Flight flight) {
-        Plane plane = flight.getPlane();
-        return plane.maxBaggage() - this.baggageWeightTotal(flight);
+        int weightBags = flight.getPlaneWeight();
+        return weightBags - this.baggageWeightTotal(flight);
     }
 }
