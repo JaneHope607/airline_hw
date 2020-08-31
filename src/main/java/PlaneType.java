@@ -1,11 +1,11 @@
 public enum PlaneType {
 
-    BOEING747(400, 750),
-    BOEING767(335, 550),
-    BOEING777(380, 500),
-    BOEING787(250, 400),
-    AIRBUSA330(220, 380),
-    AIRBUSMINI(3, 100);
+    BOEING747(100, 750),
+    BOEING767(80, 550),
+    BOEING777(60, 500),
+    BOEING787(35, 400),
+    AIRBUSA330(22, 380),
+    AIRBUSMINI(5, 100);
 
     private final int capacity;
     private final int weight;

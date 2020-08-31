@@ -1,17 +1,30 @@
 public class FlightManager {
 
-    public int baggageWeightEachPassenger(Flight flight) {
+    private Flight flight;
+
+    public FlightManager(Flight flight) {
+        this.flight = flight;
+    }
+
+    public Flight getFlight() {
+        return flight;
+    }
+
+    public int baggageWeightEachPassenger() {
         int weightBags = flight.getPlaneWeight();
         return weightBags / flight.getCapacity();
     }
 
-    public int baggageWeightTotal(Flight flight) {
-        int passengers = flight.numberPassengers();
-        return passengers * this.baggageWeightEachPassenger(flight);
+    public int baggageWeightTotal() {
+        int total = 0;
+        for (Passenger passenger: flight.getPassengers()) {
+            total += passenger.getBagWeight();
+        }
+        return total;
     }
 
-    public int getRemainingBaggageWeight(Flight flight) {
+    public int getRemainingBaggageWeight() {
         int weightBags = flight.getPlaneWeight();
-        return weightBags - this.baggageWeightTotal(flight);
+        return weightBags - this.baggageWeightTotal();
     }
 }
